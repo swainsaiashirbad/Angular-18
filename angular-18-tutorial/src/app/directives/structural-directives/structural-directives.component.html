@@ -1,0 +1,82 @@
+<div class="container-fluid">
+    <div class="row bg-dark">
+        <div class="col">
+            <h1 class="text-center text-light" >Structurl Directives</h1>
+            <h4 class="text-light">*ngIf,*ngFor</h4>
+        </div>
+    </div>
+    <div class="row py-3 justify-content-evenly">
+        <div class="col bg-danger me-1" *ngIf="isDivVisible"> <h1>div-1</h1></div>
+        <div class="col bg-success me-1" *ngIf="isDiv2IsVisible"><h1>div-2</h1></div>
+        <div class="col bg-secondary me-1" *ngIf="num1==num2"><h1>div-3</h1></div>
+        <div class="col bg-primary " *ngIf="selectedCountry=='Canada'"><h1>div-4</h1></div>
+    </div>
+    <div class="row py-3 ">
+        <div class="col "> 
+            <button (click)="hideDiv()" class="btn btn-danger mx-1">Hide</button>
+            <button (click)="showDiv()" class="btn btn-primary">Show</button>
+        </div>
+        <div class="col ">
+            <button class="btn btn-success ms-4" (click)="toggle()">Toggle</button>
+        </div>
+        <div class="col ">
+            <input type="text" placeholder="num1" [(ngModel)]="num1">
+            <input type="text" placeholder="num2" [(ngModel)]="num2">
+        </div>
+        <div class="col ">
+            <input type="checkbox" [(ngModel)]="isActive">
+            <select name="" id=""[(ngModel)]="selectedCountry">
+                <option value="India">India</option>
+                <option value="USA">USA</option>
+                <option value="Canada">Canada</option>
+            </select>
+        </div>
+    </div>
+    <div class="row py-5">
+        <div class="col">
+            <ul>
+                <li *ngFor="let cityName of city">{{cityName}}</li>
+            </ul>
+        </div>
+        <div class="col">
+            <select name="" id="">
+                <option value="" *ngFor="let citys of city">{{citys}}</option>
+            </select>
+        </div>
+        <div class="col">
+            <div *ngFor="let name of city">{{name}}</div>
+        </div>
+        
+    </div>
+    <div class="row py-5">
+        <div class="col">
+            <select name="" id="">
+                <option *ngFor="let s of student" [value]="s.id">{{s.name}}</option>
+            </select>
+        </div>
+        <div class="col">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <td>Sr.no</td>
+                        <td>Name</td>
+                        <td>City</td>
+                        <td>Status</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let st of student; let srNo= index">
+                        <td>{{srNo+1}}</td>
+                        <td>{{st.name}}</td>
+                        <td>{{st.city}}</td> 
+                        <td>
+                            <span *ngIf="st.isActive==true">Active</span>
+                            <span *ngIf="st.isActive==false">In-Active</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+       
+    </div>
+</div>
