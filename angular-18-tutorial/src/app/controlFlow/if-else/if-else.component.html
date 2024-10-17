@@ -1,0 +1,102 @@
+<div class="container-fluid">
+    <div class="row bg-dark">
+        <div class="col">
+            <h1 class="text-center text-light" >Control Flow Statment</h1>
+            <h4 class="text-light">"if , else"</h4>
+        </div>
+    </div>
+    <div class="row py-3 justify-content-evenly">
+        @if (div1IsVisible) {
+            <div class="col bg-danger me-1" > 
+                <h1>div-1</h1>
+            </div>
+        }
+       
+        @if (div2IsVisible) {
+            <div class="col bg-success me-1" ><h1>div-2</h1></div>
+        }
+
+        @if (num1==num2) {
+            <div class="col bg-secondary me-1" ><h1>div-3</h1></div>
+        }
+        <div class="col bg-primary " >
+            @if (dropdewnValue=="India") {   <p>India</p>}
+            @else if (dropdewnValue=="USA") { <p>USA</p>}
+            @else if (dropdewnValue=="Canada") {  <p>Canada</p>}
+             @else {  <p>Please select country</p>}
+            
+        </div>
+    </div>
+    <div class="row py-3 ">
+        <div class="col "> 
+            <button class="btn btn-danger mx-1" (click)="hide()">Hide</button>
+            <button class="btn btn-primary"(click)="show()">Show</button>
+        </div>
+        <div class="col ">
+            <button class="btn btn-success ms-4" (click)="showHide()" >Toggle</button>
+        </div>
+        <div class="col ">
+            <input type="text" placeholder="num1" [(ngModel)]="num1">
+            <input type="text" placeholder="num2" [(ngModel)]="num2" >
+        </div>
+        <div class="col ">
+        <div class="">
+            <select name="" id="" [(ngModel)]="dropdewnValue" >
+                <option class="dropdown-menu" value="select">select</option> 
+                <option class="dropdown-item" value="India">India</option>
+                <option class="dropdown-item" value="USA">USA</option>
+                <option class="dropdown-item" value="Canada">Canada</option>
+                <option class="dropdown-item" value="other">other</option>
+            </select>
+        </div>
+            
+        </div>
+    </div>
+    <div class="row py-5">
+        <div class="col">
+            <ul>
+                <li ></li>
+            </ul>
+        </div>
+        <div class="col">
+            <select name="" id="">
+                <option value="" ></option>
+            </select>
+        </div>
+        <div class="col">
+            <div></div>
+        </div>
+        
+    </div>
+    <div class="row py-5">
+        <div class="col">
+            <select name="" id="">
+                <option ></option>
+            </select>
+        </div>
+        <div class="col">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <td>Sr.no</td>
+                        <td>Name</td>
+                        <td>City</td>
+                        <td>Status</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr >
+                        <td></td>
+                        <td></td>
+                        <td></td> 
+                        <td>
+                            <span >Active</span>
+                            <span >In-Active</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+       
+    </div>
+</div>
