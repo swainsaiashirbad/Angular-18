@@ -1,0 +1,50 @@
+<div class="container">
+    <div class="row">
+        <div class="col-4">
+            origina value: <span>{{name}}</span>
+            <br>
+            after pipe: <span>{{name|uppercase}}</span>
+        </div>
+        <div class="col-4">
+            origina value: <span>{{name}}</span>
+            <br>
+            after pipe: <span>{{name|titlecase}}</span>
+        </div>
+        <div class="col-4">
+            origina value: <span>{{name}}</span>
+            <br>
+            after pipe: <span>{{name| lowercase}}</span>
+        </div>
+    </div>
+    
+    <div class="row py-5">
+        <div class="col-4">
+            origina value: <span>{{date}}</span>
+            <br>
+            after pipe: <span>{{date|date}}</span>
+        </div>
+        <div class="col-4">
+            origina value: <span>{{date}}</span>
+            <br>
+            after pipe: <span>{{date|date:"dd-MM-yy"}}</span>
+        </div>
+        <div class="col-4">
+            origina value: <span>{{date}}</span>
+            <br>
+            after pipe: <span>{{date|date:'dd-MMM-yyyy'}}</span>
+        </div>
+    </div>
+    <div class="row py-5">
+        <div class="col-4">
+            origina value: <span>{{object}}</span>
+            <br>
+            after pipe: <span>{{object|json}}</span>
+        </div>
+        <div class="col-4">
+            origina value: <span>{{object.ph}}</span>
+            <br>
+            after pipe: <span>{{object.ph|na}}</span>
+        </div>
+    </div>
+</div>
+

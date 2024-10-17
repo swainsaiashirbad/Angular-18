@@ -4,6 +4,8 @@ import { AboutComponent } from './routing/about/about.component';
 import { LogOutComponent } from './routing/log-out/log-out.component';
 import { ServicesComponent } from './routing/services/services.component';
 import { IfElseComponent } from './controlFlow/if-else/if-else.component';
+import { ForAndSwitchComponent } from './controlFlow/for-and-switch/for-and-switch.component';
+import { PipesComponent } from './pipes/pipes/pipes.component';
 
 export const routes: Routes = [
     {
@@ -25,5 +27,13 @@ export const routes: Routes = [
     {
         path:"ifElse",
         component:IfElseComponent
+    },
+    {
+        path:"forAndSwitch",
+        component:ForAndSwitchComponent
+    },
+    {
+        path:"pipes",
+        component:PipesComponent
     }
 ];
