@@ -1,0 +1,52 @@
+<div class="container">
+    <div class="row bg-dark">
+        <div class="col">
+            <h1 class="text-center text-light" >Template Forms</h1>
+            <h4 class="text-light">ngModel</h4>
+        </div>
+    </div>
+    <div class="row py-5">
+        <div class="col">
+            <form #form="ngForm">
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">First Name</label>
+                    <input type="text"  class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" #fName="ngModel" name="firstName" [(ngModel)]="formObject.firstName" required minlength="3">
+                   <div class="text-danger">
+                    @if ((fName.touched || fName.dirty) && fName.errors?.["required"]) {
+                    <span>This fill</span>
+                    }
+                    @else if ((fName.touched || fName.dirty) && fName.errors?.["minlength"]) { <span>Please enter min 3 char</span> }
+                   </div>
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Last Name</label>
+                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"  name="lastName" [(ngModel)]="formObject.lastName">
+                  </div>
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Email address</label>
+                  <input type="email"  class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" #email="ngModel" name="email" [(ngModel)]="formObject.email" required>
+                  <div class="text-danger">
+                    @if ((email.touched || email.dirty) && email.errors?.["required"]) { <span>Email is required</span> }
+                  </div>
+                  <div id="emailHelp"  class="form-text">We'll never share your email with anyone else.</div>
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">Password</label>
+                  <input type="password"  class="form-control" id="exampleInputPassword1" name="password" [(ngModel)]="formObject.password" required>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">City</label>
+                    <input type="text"  class="form-control" id="exampleInputPassword1" name="city" [(ngModel)]="formObject.city">
+                  </div>
+                <div class="mb-3 form-check">
+                  <input type="checkbox"  class="form-check-input" id="exampleCheck1" name="isAgreed" [(ngModel)]="formObject.isAgreed">
+                  <label class="form-check-label"  for="exampleCheck1">Check me out</label >
+                </div>
+                <button type="submit" class="btn btn-primary" [disabled]="form.invalid" (click)="subbmit()">Submit</button>
+              </form>
+        </div>
+    </div>
+    <div class="row">
+       <p> {{formVAlue}}</p>
+    </div>
+</div>
