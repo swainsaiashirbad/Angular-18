@@ -2,11 +2,12 @@ import { JsonPipe } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { variationPlacements } from '@popperjs/core';
+import { AlertComponent } from "../../API/get-api/reusableComponent/alert/alert.component";
 
 @Component({
   selector: 'app-reactive-form',
   standalone: true,
-  imports: [ReactiveFormsModule,JsonPipe],
+  imports: [ReactiveFormsModule, JsonPipe, AlertComponent],
   templateUrl: './reactive-form.component.html',
   styleUrl: './reactive-form.component.css'
 })
@@ -25,9 +26,6 @@ export class ReactiveFormComponent {
 
     }
   )
-
-
-
 
   subbmit(){
     this.formValue=this.formObject.value

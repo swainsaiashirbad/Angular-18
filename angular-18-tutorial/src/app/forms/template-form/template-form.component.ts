@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { AlertComponent } from "../../API/get-api/reusableComponent/alert/alert.component";
 
 @Component({
   selector: 'app-template-form',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, AlertComponent],
   templateUrl: './template-form.component.html',
   styleUrl: './template-form.component.css'
 })

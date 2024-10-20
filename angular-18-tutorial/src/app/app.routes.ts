@@ -9,6 +9,7 @@ import { PipesComponent } from './pipes/pipes/pipes.component';
 import { ReactiveFormComponent } from './forms/reactive-form/reactive-form.component';
 import { FormsComponent } from './forms/forms/forms.component';
 import { TEmplateFormComponent } from './forms/template-form/template-form.component';
+import { GetAPIComponent } from './API/get-api/get-api.component';
 
 export const routes: Routes = [
     {
@@ -50,5 +51,9 @@ export const routes: Routes = [
     {
         path:"templateForm",
         component:TEmplateFormComponent
+    },
+    {
+        path:"getAPI",
+        component:GetAPIComponent
     }
 ];
