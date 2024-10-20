@@ -1,0 +1,60 @@
+<div class="container">
+    <div class="row bg-dark">
+        <div class="col">
+            <h1 class="text-center text-light" >Reactive Forms</h1>
+            <h4 class="text-light">ReactiveFormsModule,FormGroup,FormControl</h4>
+        </div>
+    </div>
+    <div class="row py-5">
+        <div class="col">
+            <form [formGroup]="formObject" >
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">First Name</label>
+                    <input type="text"  class="form-control" id="firstName" aria-describedby="emailHelp"  name="firstName" formControlName="firstName">
+                    <div class="text-danger">
+                        @if  (formObject.controls['firstName'].touched && formObject.controls['firstName'].errors?.['required']) {
+                            <span>FirstNAme is required</span>
+                        }@else if (formObject.controls['firstName'].touched && formObject.controls['firstName'].errors?.['minLength']) {
+                            <span>Please provide min 3 char</span>
+                        }
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Last Name</label>
+                    <input type="text" class="form-control" id="lastName" aria-describedby="emailHelp"  name="lastName" formControlName="lastName">
+                  </div>
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Email address</label>
+                  <input type="email"  class="form-control" id="exampleInemailputEmail1" aria-describedby="emailHelp" name="email" formControlName="email">
+                <div class="text-danger">
+                    @if  ( formObject.controls['email'].errors?.['required'] && formObject.controls['email'].errors?.['email']) {
+                        <span>please enter valid email</span>
+                    }
+                </div>
+                  <div id="emailHelp"  class="form-text">We'll never share your email with anyone else.</div>
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">Password</label>
+                  <input type="password"  class="form-control" id="password" name="password" formControlName="password" >
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">City</label>
+                    <input type="text"  class="form-control" id="city" name="city" formControlName="city">
+                  </div>
+                <div class="mb-3 form-check">
+                  <input type="checkbox"  class="form-check-input" id="isAgreed" name="isAgreed" formControlName="isAgreed">
+                  <label class="form-check-label"  for="exampleCheck1">Agree</label >
+                    <div class="text-danger">
+                        @if (formObject.controls['isAgreed'].errors?.['required']) {
+                            <span>Agree please</span>
+                        }
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary" [disabled]="formObject.errors" (click)="subbmit()">Submit</button>
+              </form>
+        </div>
+    </div>
+    <div class="row">
+       <p> {{formValue  |json}}</p>
+    </div>
+</div>
