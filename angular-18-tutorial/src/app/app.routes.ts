@@ -10,6 +10,7 @@ import { ReactiveFormComponent } from './forms/reactive-form/reactive-form.compo
 import { FormsComponent } from './forms/forms/forms.component';
 import { TEmplateFormComponent } from './forms/template-form/template-form.component';
 import { GetAPIComponent } from './API/get-api/get-api.component';
+import { NgTempComponent } from './ngTemplate/ng-temp/ng-temp.component';
 
 export const routes: Routes = [
     {
@@ -55,5 +56,9 @@ export const routes: Routes = [
     {
         path:"getAPI",
         component:GetAPIComponent
+    },
+    {
+        path:"ngTemp",
+        component:NgTempComponent
     }
 ];
