@@ -6,6 +6,9 @@ import { ServicesComponent } from './routing/services/services.component';
 import { IfElseComponent } from './controlFlow/if-else/if-else.component';
 import { ForAndSwitchComponent } from './controlFlow/for-and-switch/for-and-switch.component';
 import { PipesComponent } from './pipes/pipes/pipes.component';
+import { ReactiveFormComponent } from './forms/reactive-form/reactive-form.component';
+import { FormsComponent } from './forms/forms/forms.component';
+import { TEmplateFormComponent } from './forms/template-form/template-form.component';
 
 export const routes: Routes = [
     {
@@ -35,5 +38,17 @@ export const routes: Routes = [
     {
         path:"pipes",
         component:PipesComponent
+    },
+    {
+        path:"reactiveForm",
+        component:ReactiveFormComponent
+    },
+    {
+        path:"forms",
+        component:FormsComponent
+    },
+    {
+        path:"templateForm",
+        component:TEmplateFormComponent
     }
 ];
