@@ -13,6 +13,7 @@ import { GetAPIComponent } from './API/get-api/get-api.component';
 import { NgTempComponent } from './ngTemplate/ng-temp/ng-temp.component';
 import { LoginComponent } from './login/login/login.component';
 import { LayoutComponent } from './layout/layout/layout.component';
+import { authGuard } from './service/auth.guard';
 
 export const routes: Routes = [
 
@@ -28,54 +29,67 @@ export const routes: Routes = [
     {
         path:"layout",
         component:LayoutComponent,
+        canActivate:[authGuard],
         children:[
             {
                 path:"home",
-                component:HomeComponent
+                component:HomeComponent,
+                // canActivate:[authGuard]
             },
             {
                 path:"about",
-                component:AboutComponent
+                component:AboutComponent ,
+                // canActivate:[authGuard]
             },
             {
                 path:"logOut",
-                component:LogOutComponent
+                component:LogOutComponent,
+                // canActivate:[authGuard]
             },
             {
                 path:"services",
-                component:ServicesComponent
+                component:ServicesComponent,
+                // canActivate:[authGuard]
             },
             {
                 path:"ifElse",
-                component:IfElseComponent
+                component:IfElseComponent,
+                // canActivate:[authGuard]
             },
             {
                 path:"forAndSwitch",
-                component:ForAndSwitchComponent
+                component:ForAndSwitchComponent,
+                // canActivate:[authGuard]
             },
             {
                 path:"pipes",
-                component:PipesComponent
+                component:PipesComponent,
+                // canActivate:[authGuard]
             },
             {
                 path:"reactiveForm",
-                component:ReactiveFormComponent
+                component:ReactiveFormComponent,
+                // canActivate:[authGuard]
             },
             {
                 path:"forms",
-                component:FormsComponent
+                component:FormsComponent,
+                // canActivate:[authGuard]
             },
             {
                 path:"templateForm",
-                component:TEmplateFormComponent
+                component:TEmplateFormComponent,
+                // canActivate:[authGuard]
             },
             {
                 path:"getAPI",
-                component:GetAPIComponent
+                component:GetAPIComponent,
+                // canActivate:[authGuard]
             },
             {
                 path:"ngTemp",
-                component:NgTempComponent
+                component:NgTempComponent,
+                // canActivate:[authGuard]
             }
 
         ]
