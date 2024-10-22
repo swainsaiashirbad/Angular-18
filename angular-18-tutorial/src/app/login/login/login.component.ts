@@ -22,7 +22,7 @@ export class LoginComponent {
   login(){
     
     if(this.user.userName=="admin" && this.user.password=="1234"){
-
+      localStorage.setItem('username' ,JSON.stringify(this.user.userName) )
       this.router.navigateByUrl("/layout")
     }
     else{
