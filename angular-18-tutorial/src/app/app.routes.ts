@@ -11,54 +11,75 @@ import { FormsComponent } from './forms/forms/forms.component';
 import { TEmplateFormComponent } from './forms/template-form/template-form.component';
 import { GetAPIComponent } from './API/get-api/get-api.component';
 import { NgTempComponent } from './ngTemplate/ng-temp/ng-temp.component';
+import { LoginComponent } from './login/login/login.component';
+import { LayoutComponent } from './layout/layout/layout.component';
 
 export const routes: Routes = [
+
     {
-        path:"home",
-        component:HomeComponent
+        path:"",
+        redirectTo:'login',
+        pathMatch:'full'
     },
     {
-        path:"about",
-        component:AboutComponent
+        path:"login",
+        component:LoginComponent
     },
     {
-        path:"logOut",
-        component:LogOutComponent
-    },
-    {
-        path:"services",
-        component:ServicesComponent
-    },
-    {
-        path:"ifElse",
-        component:IfElseComponent
-    },
-    {
-        path:"forAndSwitch",
-        component:ForAndSwitchComponent
-    },
-    {
-        path:"pipes",
-        component:PipesComponent
-    },
-    {
-        path:"reactiveForm",
-        component:ReactiveFormComponent
-    },
-    {
-        path:"forms",
-        component:FormsComponent
-    },
-    {
-        path:"templateForm",
-        component:TEmplateFormComponent
-    },
-    {
-        path:"getAPI",
-        component:GetAPIComponent
-    },
-    {
-        path:"ngTemp",
-        component:NgTempComponent
+        path:"layout",
+        component:LayoutComponent,
+        children:[
+            {
+                path:"home",
+                component:HomeComponent
+            },
+            {
+                path:"about",
+                component:AboutComponent
+            },
+            {
+                path:"logOut",
+                component:LogOutComponent
+            },
+            {
+                path:"services",
+                component:ServicesComponent
+            },
+            {
+                path:"ifElse",
+                component:IfElseComponent
+            },
+            {
+                path:"forAndSwitch",
+                component:ForAndSwitchComponent
+            },
+            {
+                path:"pipes",
+                component:PipesComponent
+            },
+            {
+                path:"reactiveForm",
+                component:ReactiveFormComponent
+            },
+            {
+                path:"forms",
+                component:FormsComponent
+            },
+            {
+                path:"templateForm",
+                component:TEmplateFormComponent
+            },
+            {
+                path:"getAPI",
+                component:GetAPIComponent
+            },
+            {
+                path:"ngTemp",
+                component:NgTempComponent
+            }
+
+        ]
     }
+
+
 ];
