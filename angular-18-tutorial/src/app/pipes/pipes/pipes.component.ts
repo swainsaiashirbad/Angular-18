@@ -1,6 +1,7 @@
-import { DatePipe, JsonPipe, LowerCasePipe, TitleCasePipe, UpperCasePipe } from '@angular/common';
-import { Component } from '@angular/core';
+import { CommonModule, DatePipe, JsonPipe, LowerCasePipe, TitleCasePipe, UpperCasePipe } from '@angular/common';
+import { Component, inject, OnInit } from '@angular/core';
 import { NaPipe } from '../na.pipe';
+import { UserServiceService } from '../../service/user-service.service';
 
 @Component({
   selector: 'app-pipes',
@@ -11,12 +12,26 @@ import { NaPipe } from '../na.pipe';
     DatePipe,
     TitleCasePipe,
     JsonPipe,
-    NaPipe
+    NaPipe,
+    CommonModule
   ],
   templateUrl: './pipes.component.html',
   styleUrl: './pipes.component.css'
 })
-export class PipesComponent {
+export class PipesComponent implements OnInit {
+  
+
+  private service=inject(UserServiceService)
+  role:string=''
+  role1:string=''
+  ngOnInit(): void {
+   this.service.roleSubject$.subscribe((role:string)=>{
+    this.role=role
+   })
+   this.service.roleBhevaiourSubject.subscribe((role1:string)=>{
+    this.role1=role1
+   })
+  }
 
   name:string="sai ashirbad swain"
   date:Date=new Date();

@@ -26,6 +26,7 @@ export class SignalComponent {
   UserObj=signal({
     name:"sai",
     age:25
+    
   })
 
   constructor(){

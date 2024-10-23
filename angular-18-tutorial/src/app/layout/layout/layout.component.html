@@ -47,6 +47,13 @@
             </ul>
           </div>
           <div class="d-flex justify-content-end ">
+            <form action="">
+              <select name="role" id="" [(ngModel)]="role" (ngModelChange)="pushData()">
+                <option value="">Select ROle</option>
+                <option value="user"></option>
+                <option value="admin"></option>
+              </select>
+            </form>
             <h4 class="pe-3">{{username}}</h4>
             <button class="btn btn-danger me-5" (click)="logout()">LogOut</button>
            </div>
