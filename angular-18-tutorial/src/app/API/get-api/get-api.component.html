@@ -4,7 +4,21 @@
             <button class="btn btn-primary my-2" (click)="getApiCall()">get API</button>
         </div>
         <div class="col-8">
-                {{users | json}}
+                {{usersList | json}}
         </div>
+    </div>
+    <div class="row">
+      @if (isApiCallSuccess) {
+        <div class="col">
+            @for (item of usersList; track $index) {
+               <div class="card" style="width: 25rem;">
+                   <h3>{{item.name}}</h3>
+                   <h3>{{item.password}}</h3>
+                   <h3>{{item.email}}</h3>
+                   <h3>{{item.about}}</h3>
+               </div>
+            }
+           </div>
+      }
     </div>
 </div>

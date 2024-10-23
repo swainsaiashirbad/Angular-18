@@ -22,7 +22,7 @@ export class LayoutComponent {
   }
 
   logout() {
-    localStorage.removeItem
+    localStorage.removeItem('username')
     this.router.navigateByUrl("login")
   }
 

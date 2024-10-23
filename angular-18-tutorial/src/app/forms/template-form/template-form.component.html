@@ -18,7 +18,7 @@
                     <input type="text"  class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" #fName="ngModel" name="firstName" [(ngModel)]="formObject.firstName" required minlength="3">
                    <div class="text-danger">
                     @if ((fName.touched || fName.dirty) && fName.errors?.["required"]) {
-                    <span>This fill</span>
+                    <span>{{Validation.required}}</span>
                     }
                     @else if ((fName.touched || fName.dirty) && fName.errors?.["minlength"]) { <span>Please enter min 3 char</span> }
                    </div>
@@ -31,7 +31,7 @@
                   <label for="exampleInputEmail1" class="form-label">Email address</label>
                   <input type="email"  class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" #email="ngModel" name="email" [(ngModel)]="formObject.email" required>
                   <div class="text-danger">
-                    @if ((email.touched || email.dirty) && email.errors?.["required"]) { <span>Email is required</span> }
+                    @if ((email.touched || email.dirty) && email.errors?.["required"]) { <span>{{Validation.required}} </span> }
                   </div>
                   <div id="emailHelp"  class="form-text">We'll never share your email with anyone else.</div>
                 </div>

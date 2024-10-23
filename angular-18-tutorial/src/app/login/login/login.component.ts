@@ -21,9 +21,9 @@ export class LoginComponent {
 
   login(){
     
-    if(this.user.userName=="admin" && this.user.password=="1234"){
+    if((this.user.userName=="admin" && this.user.password=="1234") || (this.user.userName=="sai" && this.user.password=="abcd")){
       localStorage.setItem('username' ,JSON.stringify(this.user.userName) )
-      this.router.navigateByUrl("/layout")
+      this.router.navigateByUrl("/home")
     }
     else{
       alert("Username or password incorect")

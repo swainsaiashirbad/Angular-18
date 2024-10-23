@@ -1,0 +1,56 @@
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h1 class="text-center">Signal</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-4">
+            courseName- {{courseName()}}
+        </div>
+        <div class="col-4">
+            first name:- {{firstName()}}
+            <br>
+            Last name:- {{lastName()}}
+        </div>
+        <div class="col-4">
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-4">
+            courseName2- {{courseName2}}
+        </div>
+        <div class="col-4">
+            Full name:- {{fullName()}}
+            <br>
+            <button class="btn btn-primary me-2" (click)="changeFirstName()">ChangeFirstNAme</button>
+            <button class="btn btn-primary" (click)="changelastName()">ChangeFirstNAme</button>
+        </div>
+        <div class="col-4">
+            
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-4">
+           City List :- {{cityList()}}
+        </div>
+        <div class="col-4">
+           USerObj:- {{UserObj().name}}--- {{UserObj().age}}
+        </div>
+        <div class="col-4">
+            
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-4">
+           <button class="btn btn-primary" (click)="addCity()">AddCity</button>
+        </div>
+        <div class="col-4">
+            <button class="btn btn-primary" (click)="changeAge()">ChangeAge</button>
+        </div>
+        <div class="col-4">
+            
+        </div>
+    </div>
+</div>

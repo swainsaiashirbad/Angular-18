@@ -14,6 +14,7 @@ import { NgTempComponent } from './ngTemplate/ng-temp/ng-temp.component';
 import { LoginComponent } from './login/login/login.component';
 import { LayoutComponent } from './layout/layout/layout.component';
 import { authGuard } from './service/auth.guard';
+import { SignalComponent } from './signal/signal/signal.component';
 
 export const routes: Routes = [
 
@@ -27,7 +28,7 @@ export const routes: Routes = [
         component:LoginComponent
     },
     {
-        path:"layout",
+        path:"",
         component:LayoutComponent,
         canActivate:[authGuard],
         children:[
@@ -90,6 +91,11 @@ export const routes: Routes = [
                 path:"ngTemp",
                 component:NgTempComponent,
                 // canActivate:[authGuard]
+            },
+            {
+                path:"signal",
+                component:SignalComponent,
+            
             }
 
         ]

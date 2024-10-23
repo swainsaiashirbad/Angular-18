@@ -1,21 +1,22 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
+import { UserConst } from '../constants/userConst';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserServiceService {
 
-  private URL:string="http://localhost:8080/"
+ 
 
   private http=inject(HttpClient)
   constructor() { }
 
   getAllUser(){
-  return  this.http.get(this.URL+"users")
+  return  this.http.get(UserConst.GET_ALL_DATA_URL+"users")
   }
 
   createAllUser(){
-    return  this.http.post(this.URL+"users",null)
+    return  this.http.post(UserConst.GET_ALL_DATA_URL+"users",null)
     }
 }
